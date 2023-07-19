@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  @apply h-full bg-white;
+}
+
+body {
+  font-family: var(--primary-font);
+  @apply h-full;
+}
+
+@layer {
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+}
+
+.skeleton {
+  @apply bg-gray-300/30 rounded-md animate-pulse;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  @apply bg-white shadow-xl transition duration-300;
+}
+
+.swiper-button-prev::after {
+  @apply text-white shadow;
+}
+
+.swiper-button-next::after {
+  @apply text-white shadow;
+}
+
+.mapboxgl-popup-content {
+  @apply w-[300px] h-auto !p-0 !rounded-md z-0;
+}
+
+.mapboxgl-popup-content .mapboxgl-popup-close-button {
+  @apply bg-white w-5 h-5 top-2 right-2 rounded-full text-base flex items-center justify-center hover:brightness-95;
+}
