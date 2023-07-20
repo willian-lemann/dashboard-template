@@ -46,21 +46,19 @@ function App({ Component, pageProps }: AppProps) {
   // const shouldNotShowHeader = !onlyLandingPagePattern.test(pathname);
 
   return (
-    <ClerkProvider {...pageProps} localization={ptBR}>
-      <QueryClientProvider client={queryClient}>
-        {isAuth ? (
-          <AuthLayout>
-            <Component {...pageProps} />
-          </AuthLayout>
-        ) : (
-          <>
-            <Component {...pageProps} />
-          </>
-        )}
-        <AlertProvider />
-        {/* <ReactQueryDevtools /> */}
-      </QueryClientProvider>
-    </ClerkProvider>
+    <QueryClientProvider client={queryClient}>
+      {isAuth ? (
+        <AuthLayout>
+          <Component {...pageProps} />
+        </AuthLayout>
+      ) : (
+        <>
+          <Component {...pageProps} />
+        </>
+      )}
+      <AlertProvider />
+      {/* <ReactQueryDevtools /> */}
+    </QueryClientProvider>
   );
 }
 

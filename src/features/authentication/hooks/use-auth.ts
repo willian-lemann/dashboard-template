@@ -1,4 +1,4 @@
-import { useClerk, useUser } from "@clerk/nextjs";
+ 
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { getCurrentUserService } from "../services/get-current-user";
@@ -20,9 +20,8 @@ export const authStore = create<AuthStore>((set, get) => ({
 }));
 
 export function useAuth() {
-  const { isSignedIn } = useUser();
   const router = useRouter();
-  const { signOut } = useClerk();
+  
 
   const { user, getCurrentUser } = authStore((state) => ({
     user: state.user,
@@ -30,7 +29,7 @@ export function useAuth() {
   }));
 
   async function logout() {
-    await signOut();
+    // await signOut();
 
     authStore.setState({ user: null });
     router.replace("/login");
@@ -46,7 +45,7 @@ export function useAuth() {
 
   return {
     user,
-    isSignedIn,
+    isSignedIn: true,
     logout,
   };
 }

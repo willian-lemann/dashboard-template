@@ -12,9 +12,7 @@ const clientRoutes = [
   "/sobre",
 ];
 
-export default authMiddleware({
-  publicRoutes: clientRoutes,
-});
+export default function middleware() {}
 
 export const config = {
   matcher: ["/((?!.*\\..*|_next).*)", "/", "/(api|trpc)(.*)"],

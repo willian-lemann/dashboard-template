@@ -46,31 +46,6 @@ const navigation = [
     icon: User,
     current: false,
   },
-  {
-    name: "Compras",
-    href: pagesURLConsts.cart,
-    icon: FolderIcon,
-    current: false,
-  },
-  { name: "Explore", href: pagesURLConsts.explore, icon: Home, current: false },
-  {
-    name: "Explore no mapa",
-    href: pagesURLConsts.explore,
-    icon: MapPin,
-    current: false,
-  },
-  {
-    name: "Lista de desejos",
-    href: pagesURLConsts.wishlist,
-    icon: HeartIcon,
-    current: false,
-  },
-  {
-    name: "Documentos",
-    href: pagesURLConsts.documents,
-    icon: Files,
-    current: false,
-  },
 ];
 
 type SidebarProps = {

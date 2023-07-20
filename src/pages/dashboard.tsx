@@ -28,12 +28,6 @@ import { Skeleton } from "@/features/property/components/Skeleton";
 export default function DashboardPage() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  const { properties, isLoading } = useFetchAllProperties();
-
-  useEffect(() => {
-    propertiesStore.setState({ properties });
-  }, [properties]);
-
   return (
     <Tabs.Root defaultValue={pagesURLConsts.dashboard} asChild>
       <div className="grid grid-cols-[18rem_1fr]">
@@ -65,19 +59,19 @@ export default function DashboardPage() {
               </Tabs.Content>
 
               <Tabs.Content asChild value={pagesURLConsts.cart}>
-                <Cart />
+                {/* <Cart /> */}
               </Tabs.Content>
 
               <Tabs.Content asChild value={pagesURLConsts.explore}>
-                {isLoading ? <Skeleton /> : <Explore />}
+                <div>content</div>
               </Tabs.Content>
 
               <Tabs.Content asChild value={pagesURLConsts.wishlist}>
-                <Wishlist />
+                {/* <Wishlist /> */}
               </Tabs.Content>
 
               <Tabs.Content asChild value={pagesURLConsts.documents}>
-                <Documents />
+                {/* <Documents /> */}
               </Tabs.Content>
             </div>
           </main>
